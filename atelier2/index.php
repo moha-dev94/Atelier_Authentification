@@ -4,7 +4,7 @@ session_start();
 if (!isset($_SESSION['randomNumber'])) {
     $_SESSION['randomNumber'] = bin2hex(random_bytes(16));
 }
-$_SESSION['role'] = $username;
+
 $randomNumber = $_SESSION['randomNumber'];
 $_SESSION['randomNumber'] = $randomNumber;
 // Vérifier si l'utilisateur est déjà en possession d'un cookie valide (cookie authToken ayant le contenu 12345)
@@ -23,7 +23,7 @@ else if (isset($_COOKIE['authToken']) && $_COOKIE['authToken'] === $randomNumber
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
-
+$_SESSION['role'] = $username;
     // Vérification simple du username et de son password.
     // Si ok alors on initialise le cookie sur le poste de l'utilisateur 
     if ($username === 'admin' && $password === 'secret') {
