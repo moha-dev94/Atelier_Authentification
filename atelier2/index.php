@@ -4,17 +4,21 @@ session_start();
 if (!isset($_SESSION['randomNumber'])) {
     $_SESSION['randomNumber'] = bin2hex(random_bytes(16));
 }
+$_SESSION['role'] = $username;
 $randomNumber = $_SESSION['randomNumber'];
 $_SESSION['randomNumber'] = $randomNumber;
 // Vérifier si l'utilisateur est déjà en possession d'un cookie valide (cookie authToken ayant le contenu 12345)
 // Si l'utilisateur possède déjà ce cookie, il sera redirigé automatiquement vers la page home.php
 // Dans le cas contraire il devra s'identifier.
 
-if (isset($_COOKIE['authToken']) && $_COOKIE['authToken'] === $randomNumber) {
+if (isset($_COOKIE['authToken']) && $_COOKIE['authToken'] === $randomNumber && $_SESSION['role'] === "admin" ){
     header('Location: page_admin.php');
     exit();
 }
-
+else if (isset($_COOKIE['authToken']) && $_COOKIE['authToken'] === $randomNumber && $_SESSION['role'] === "username" ){
+    header('Location: page_user.php');
+    exit();
+}
 // Gérer la soumission du formulaire
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
