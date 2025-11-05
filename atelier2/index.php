@@ -29,6 +29,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $error = "Nom d'utilisateur ou mot de passe incorrect.";
     }
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Vérification simple du username et de son password.
+    // Si ok alors on initialise le cookie sur le poste de l'utilisateur 
+    if ($username === 'username' && $password === 'secret') {
+        setcookie('authToken', $randomNumber, time() + 60, '/', '', false, true); // Le Cookie est initialisé et valable pendant 1 heure (3600 secondes) 60 pour 1 min
+        header('Location: page_user.php'); // L'utilisateur est dirigé vers la page_user.php
+        exit();
+    } else {
+        $error = "Nom d'utilisateur ou mot de passe incorrect.";
+    }
 }
 ?>
 
