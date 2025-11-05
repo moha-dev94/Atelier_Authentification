@@ -11,7 +11,7 @@ $_SESSION['randomNumber'] = $randomNumber;
 // Dans le cas contraire il devra s'identifier.
 
 if (isset($_COOKIE['authToken']) && $_COOKIE['authToken'] === $randomNumber) {
-    header('Location: page_user.php');
+    header('Location: page_admin.php');
     exit();
 }
 
