@@ -4,7 +4,7 @@ session_start();
 
 // Vérifier si l'utilisateur est déjà connecté
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-    header('Location: atelier2/page_user.php'); // Si l'utilisateur s'est déjà connecté alors il sera automatiquement redirigé vers la page protected.php
+    header('Location: ../atelier2/page_user.php'); // Si l'utilisateur s'est déjà connecté alors il sera automatiquement redirigé vers la page protected.php
     exit();
 }
 
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['username'] = $username;
 
         // Rediriger vers la page protégée
-        header('Location: aterlier2/page_user.php');
+        header('Location: ../atelier2/page_user.php');
         exit();
     } else {
         $error = "Nom d'utilisateur ou mot de passe incorrect.";
