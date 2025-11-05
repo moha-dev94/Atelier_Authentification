@@ -18,7 +18,7 @@ if (!isset($_COOKIE['authToken']) || $_COOKIE['authToken'] !== $randomNumber) {
     <title>Accueil</title>
 </head>
 <body>
-    <h1>Bienvenue sur la page Administrateur protégée par un Cookie</h1>
+    <h1>Bienvenue sur la page user (j'aime les hommes) protégée par un Cookie</h1>
     <p>Vous êtes connecté en tant qu'admin.</p>
     <a href="logout.php">Se déconnecter</a>
 </body>
