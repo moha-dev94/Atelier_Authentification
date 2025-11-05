@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['username'] = $username;
 
         // Rediriger vers la page protégée
-        header('Location: ../atelier2/page_user.php');
+        header('Location: ../atelier2/page_admin.php');
         exit();
     } else {
         $error = "Nom d'utilisateur ou mot de passe incorrect.";
