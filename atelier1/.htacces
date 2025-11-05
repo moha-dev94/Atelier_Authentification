@@ -1,4 +1,4 @@
 AuthName "Accès protégé"
 AuthType Basic
-AuthUserFile /home/ennadifi/www/atelier1/.htpasswd
+AuthUserFile /home/ennadifi.alwaysdata.net/www/atelier1/.htpasswd
 Require valid-user
