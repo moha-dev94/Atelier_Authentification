@@ -7,7 +7,7 @@ $_SESSION['randomNumber'] = $randomNumber;
 // Si l'utilisateur possède déjà ce cookie, il sera redirigé automatiquement vers la page home.php
 // Dans le cas contraire il devra s'identifier.
 
-if (isset($_COOKIE['authToken']) && $_COOKIE['authToken'] === 'randomNumber') {
+if (isset($_COOKIE['authToken']) && $_COOKIE['authToken'] === $randomNumber) {
     header('Location: page_admin.php');
     exit();
 }
