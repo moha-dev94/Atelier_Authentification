@@ -4,7 +4,7 @@ session_start();
 
 // Vérifier si l'utilisateur est déjà connecté
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-    header('Location: ../atelier2/page_user.php'); // Si l'utilisateur s'est déjà connecté alors il sera automatiquement redirigé vers la page protected.php
+    header('Location: page_admin.php'); // Si l'utilisateur s'est déjà connecté alors il sera automatiquement redirigé vers la page protected.php
     exit();
 }
 
